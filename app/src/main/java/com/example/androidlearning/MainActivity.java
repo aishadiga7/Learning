@@ -10,30 +10,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        apicall(new Callback() {
-            @Override
-            public void result(int x) {
-                System.out.println(x);
-            }
-        });
-
-        apicall((x) -> System.out.println(x));
+        apiCall( () -> {}, (e, __) -> {});
 
     }
 
 
 
-    public void apicall(Callback callback){
-        // do something (API call) long running
-        int x = 10;
-        callback.result(x);
+    private void apiCall(SuccessListener successListener, FailureListener failureListener) {
+
     }
 
 
-    interface Callback{
-        void result(int x);
+    public interface SuccessListener {
+        void onSuccess();
     }
 
-
+    public interface FailureListener {
+        void onFailure(Error error, Throwable throwable);
+    }
 
 }

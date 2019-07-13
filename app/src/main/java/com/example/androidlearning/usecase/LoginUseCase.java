@@ -5,6 +5,7 @@ public interface LoginUseCase {
     User login();
 
     Error onError();
+    class User{}
 }
 
-class User{}
+

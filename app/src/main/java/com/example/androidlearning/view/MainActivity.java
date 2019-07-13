@@ -1,5 +1,6 @@
 package com.example.androidlearning.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.example.androidlearning.MainPresenter;
 import com.example.androidlearning.R;
 import com.example.androidlearning.RSAEncrypition;
 import com.example.androidlearning.usecase.AESEncryption;
+import com.example.androidlearning.usecase.Encryption;
 
 public class MainActivity extends AppCompatActivity implements MainView{
     private EditText mEditText;
@@ -22,7 +24,13 @@ public class MainActivity extends AppCompatActivity implements MainView{
         setContentView(R.layout.activity_main);
         Button button = findViewById(R.id.button);
         mEditText = findViewById(R.id.editext);
-        mMainPresenter = new MainPresenter(this, new AESEncryption(getApplicationContext()));
+
+
+        Context applicationContext = getApplicationContext();
+        Encryption encryption = new AESEncryption(applicationContext);
+        MainView mainView = this;
+        
+        mMainPresenter = new MainPresenter(mainView, encryption);
 
 
         button.setOnClickListener(new View.OnClickListener() {

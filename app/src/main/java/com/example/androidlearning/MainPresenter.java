@@ -24,6 +24,7 @@ public class MainPresenter {
 
     public String encrypt(String text) {
         String encrypt = encryption.encrypt(text);
+        mainView.displayText(text);
         return encrypt;
     }
 

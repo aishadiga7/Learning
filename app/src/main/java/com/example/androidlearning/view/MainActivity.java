@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
         Context applicationContext = getApplicationContext();
         Encryption encryption = new AESEncryption(applicationContext);
         MainView mainView = this;
-        
+
         mMainPresenter = new MainPresenter(mainView, encryption);
 
 

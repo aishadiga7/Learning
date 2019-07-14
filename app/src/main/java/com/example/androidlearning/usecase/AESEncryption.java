@@ -2,12 +2,16 @@ package com.example.androidlearning.usecase;
 
 import android.content.Context;
 
+import com.example.androidlearning.FileManager;
+import com.example.androidlearning.MainPresenter;
+
 import java.util.Base64;
 
 public class AESEncryption implements Encryption {
 
 
-    public AESEncryption(Context context) {
+
+    public AESEncryption(Context context, FileManager fileManager) {
     }
 
     @Override

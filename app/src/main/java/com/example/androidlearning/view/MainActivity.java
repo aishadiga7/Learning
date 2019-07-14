@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.androidlearning.MainPresenter;
 import com.example.androidlearning.R;
 import com.example.androidlearning.RSAEncrypition;
+import com.example.androidlearning.di.ObjectFactory;
 import com.example.androidlearning.usecase.AESEncryption;
 import com.example.androidlearning.usecase.Encryption;
 
@@ -26,11 +27,14 @@ public class MainActivity extends AppCompatActivity implements MainView{
         mEditText = findViewById(R.id.editext);
 
 
-        Context applicationContext = getApplicationContext();
-        Encryption encryption = new AESEncryption(applicationContext);
-        MainView mainView = this;
+        ObjectFactory component = new ObjectFactory(this);
 
-        mMainPresenter = new MainPresenter(mainView, encryption);
+
+
+
+       mMainPresenter = component.getMainPresenter();
+
+
 
 
         button.setOnClickListener(new View.OnClickListener() {

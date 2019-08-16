@@ -5,6 +5,7 @@ import android.app.Application;
 import com.example.androidlearning.di.AppComponent;
 import com.example.androidlearning.di.ContextModule;
 import com.example.androidlearning.di.DaggerAppComponent;
+import com.example.androidlearning.di.MainModule;
 
 public class LearningApplication extends Application {
 

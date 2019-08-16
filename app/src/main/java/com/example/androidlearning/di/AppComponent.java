@@ -23,3 +23,4 @@ public interface AppComponent {
    void inject(MainActivity mainActivity);
 
 }
+

@@ -2,8 +2,13 @@ package com.example.androidlearning;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,7 +17,24 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Car car = new Car();
+        Executor executor = Executors.newSingleThreadExecutor();
+
+
+        for (int i = 1; i <= 12; i++) {
+            final int name = i;
+            executor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d(TAG, "billing for" + name +"  in "+ Thread.currentThread().getName());
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    Log.d(TAG, "Billing completed for "+ name);
+                }
+            });
+        }
 
     }
 }

@@ -2,7 +2,7 @@ package com.example.androidlearning.singleton;
 
 public class SingletonWithHolerClass {
 
-
+    private String mMyString = "Hello";
 
     private SingletonWithHolerClass() {
 

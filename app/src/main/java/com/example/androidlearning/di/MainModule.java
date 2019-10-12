@@ -8,8 +8,7 @@ import com.example.androidlearning.usecase.AESEncryption;
 import com.example.androidlearning.usecase.Encryption;
 import com.example.androidlearning.view.MainView;
 
-import dagger.Module;
-import dagger.Provides;
+
 
 @Module
 public class MainModule {

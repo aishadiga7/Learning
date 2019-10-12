@@ -7,7 +7,6 @@ import com.example.androidlearning.MainPresenter;
 import com.example.androidlearning.usecase.Encryption;
 import com.example.androidlearning.view.MainActivity;
 
-import dagger.Component;
 
 @Component(modules = {MainModule.class, ContextModule.class})
 public interface AppComponent {

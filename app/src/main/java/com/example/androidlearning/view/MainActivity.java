@@ -2,12 +2,13 @@ package com.example.androidlearning.view;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidlearning.FileManager;
 import com.example.androidlearning.LearningApplication;
@@ -15,7 +16,7 @@ import com.example.androidlearning.MainPresenter;
 import com.example.androidlearning.R;
 import com.example.androidlearning.usecase.Encryption;
 
-import javax.inject.Inject;
+
 
 public class MainActivity extends AppCompatActivity implements MainView{
     private EditText mEditText;
@@ -32,7 +33,10 @@ public class MainActivity extends AppCompatActivity implements MainView{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         LearningApplication.appComponent.inject(this);
+
+
 
 
         String aishwarya = encryption.encrypt("Aishwarya");

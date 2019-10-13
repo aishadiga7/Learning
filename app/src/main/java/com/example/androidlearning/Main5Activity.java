@@ -20,9 +20,6 @@ public class Main5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
 
-
-
-
     }
 
     @Override

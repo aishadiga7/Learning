@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main5Activity">
+  <LinearLayout
+      android:orientation="vertical"
+      android:background="#D3C9C9"
+      android:id="@+id/fragmentContainer"
+      android:layout_width="match_parent"
+      android:layout_height="600dp">
+
+  </LinearLayout>
+
+    <Button
+        android:text="Add Fragment A"
+        android:onClick="AddA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:text="Add Fragment B"
+        android:onClick="AddB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

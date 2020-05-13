@@ -2,7 +2,13 @@ package com.example.androidlearning;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import example.Body;
+import example.Car;
+import example.Engine;
+import example.IronBody;
+import example.MRFTyre;
+import example.PetrolEngine;
+import example.Tyre;
 
 public class CarTest {
 

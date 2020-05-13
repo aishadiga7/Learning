@@ -1,4 +1,4 @@
-package com.example.androidlearning;
+package example;
 
 public class MRFTyre implements Tyre {
 

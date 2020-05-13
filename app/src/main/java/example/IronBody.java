@@ -1,4 +1,4 @@
-package com.example.androidlearning;
+package example;
 
 public class IronBody implements Body {
     int quality;

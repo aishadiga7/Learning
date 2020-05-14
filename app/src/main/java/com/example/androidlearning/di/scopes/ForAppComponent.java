@@ -1,4 +1,4 @@
-package com.example.androidlearning.di;
+package com.example.androidlearning.di.scopes;
 
 import javax.inject.Scope;
 

@@ -10,6 +10,7 @@ import example.IronBody;
 @Module
 public class AppModule {
 
+    @ForAppComponent
     @Provides
     public static Gson provideGson() {
         return new Gson();

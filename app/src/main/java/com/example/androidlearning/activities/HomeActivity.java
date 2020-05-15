@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.example.androidlearning.DaggerApplication;
 import com.example.androidlearning.R;
-import com.example.androidlearning.di.DaggerHomeActivityComponent;
 import com.example.androidlearning.di.HomeActivityComponent;
 import com.google.gson.Gson;
 
@@ -19,7 +18,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        activityComponent = DaggerHomeActivityComponent.builder().appComponent(DaggerApplication.appComponent).build();
+       // activityComponent = DaggerH
         gson = activityComponent.provideGson();
+
+
     }
 }

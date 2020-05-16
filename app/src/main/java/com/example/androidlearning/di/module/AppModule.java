@@ -3,6 +3,7 @@ package com.example.androidlearning.di.module;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.androidlearning.di.qualifier.AppContext;
 import com.example.androidlearning.di.scopes.ForAppComponent;
 import com.example.androidlearning.model.User;
 import com.google.gson.Gson;
@@ -33,7 +34,7 @@ public class AppModule {
 
     @ForAppComponent
     @Provides
-    public static SharedPreferences provideSharedPref(Context context) {
+    public static SharedPreferences provideSharedPref(@AppContext Context context) {
         return context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
     }
 }

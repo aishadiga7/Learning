@@ -5,11 +5,15 @@ import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.androidlearning.DaggerApplication;
 import com.example.androidlearning.R;
+import com.example.androidlearning.di.AppComponent;
 import com.example.androidlearning.di.DaggerHomeActivityComponent;
 import com.example.androidlearning.di.HomeActivityComponent;
+import com.example.androidlearning.di.qualifier.ActivityContext;
+import com.example.androidlearning.di.qualifier.AppContext;
 import com.example.androidlearning.model.User;
 import com.google.gson.Gson;
 
@@ -23,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     Gson gson;
     @Inject
     FragmentManager fragmentManager;
+    @ActivityContext
     @Inject
     Context context;
     @Inject
@@ -30,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     @Inject
     SharedPreferences sharedPreferences;
     int x;
+    private static final String TAG = "HomeActivity";
 
 
     @Override
@@ -42,6 +48,7 @@ public class HomeActivity extends AppCompatActivity {
                 .setContext(this)
                 .build();
         activityComponent.inject(this);
+        Log.d(TAG, "onCreate: ");
 
         
     }

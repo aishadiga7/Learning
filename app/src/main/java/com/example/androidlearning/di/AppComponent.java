@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.androidlearning.di.module.AppModule;
+import com.example.androidlearning.di.qualifier.AppContext;
 import com.example.androidlearning.di.scopes.ForAppComponent;
 import com.example.androidlearning.model.User;
 import com.google.gson.Gson;
@@ -19,6 +20,8 @@ public interface AppComponent {
     Gson gson();
     User getUser();
     SharedPreferences getSharedPref();
+    @AppContext
+    Context getContext();
 
     @Component.Builder
      interface Builder {
@@ -26,6 +29,6 @@ public interface AppComponent {
         @BindsInstance
         Builder setApplication(Application  application);
         @BindsInstance
-        Builder setContext(Context  context);
+        Builder setContext(@AppContext Context  context);
     }
 }

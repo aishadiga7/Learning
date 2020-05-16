@@ -2,9 +2,11 @@ package com.example.androidlearning.di;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.example.androidlearning.di.module.AppModule;
 import com.example.androidlearning.di.scopes.ForAppComponent;
+import com.example.androidlearning.model.User;
 import com.google.gson.Gson;
 
 import dagger.BindsInstance;
@@ -15,6 +17,8 @@ import dagger.Component;
 public interface AppComponent {
 
     Gson gson();
+    User getUser();
+    SharedPreferences getSharedPref();
 
     @Component.Builder
      interface Builder {

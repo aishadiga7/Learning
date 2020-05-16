@@ -1,6 +1,10 @@
 package com.example.androidlearning.di.module;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.example.androidlearning.di.scopes.ForAppComponent;
+import com.example.androidlearning.model.User;
 import com.google.gson.Gson;
 
 import dagger.Module;
@@ -19,5 +23,17 @@ public class AppModule {
     @Provides
     public static IronBody provideIronBody(){
         return new IronBody(1);
+    }
+
+    @ForAppComponent
+    @Provides
+    public static User provideLoggedInUser() {
+        return new User();
+    }
+
+    @ForAppComponent
+    @Provides
+    public static SharedPreferences provideSharedPref(Context context) {
+        return context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
     }
 }

@@ -19,11 +19,18 @@ import dagger.android.DaggerActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private static HomeActivityComponent activityComponent;
-    private Gson gson;
-    private FragmentManager fragmentManager;
-    private Context context;
-    private User user;
-    private SharedPreferences sharedPreferences;
+    @Inject
+    Gson gson;
+    @Inject
+    FragmentManager fragmentManager;
+    @Inject
+    Context context;
+    @Inject
+    User user;
+    @Inject
+    SharedPreferences sharedPreferences;
+    int x;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +41,7 @@ public class HomeActivity extends AppCompatActivity {
                 .setAppComponent(DaggerApplication.appComponent)
                 .setContext(this)
                 .build();
-
-        gson = activityComponent.provideGson();
-        fragmentManager = activityComponent.provideFragmentManager();
-        context = activityComponent.provideContext();
-        user = activityComponent.provideUser();
-        sharedPreferences = activityComponent.provideSharedPreference();
+        activityComponent.inject(this);
 
         
     }

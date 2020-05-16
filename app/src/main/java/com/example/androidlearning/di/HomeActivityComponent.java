@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
 
+import com.example.androidlearning.activities.HomeActivity;
 import com.example.androidlearning.di.scopes.ForActivityComponent;
 import com.example.androidlearning.model.User;
 import com.google.gson.Gson;
@@ -17,15 +18,8 @@ import dagger.Component;
 @ForActivityComponent
 @Component(dependencies = {AppComponent.class})
 public interface HomeActivityComponent {
-    Gson provideGson();
 
-    FragmentManager provideFragmentManager();
-
-    Context provideContext();
-
-    User provideUser();
-
-    SharedPreferences provideSharedPreference();
+    void inject(HomeActivity homeActivity);
 
     @Component.Builder
     interface Builder {

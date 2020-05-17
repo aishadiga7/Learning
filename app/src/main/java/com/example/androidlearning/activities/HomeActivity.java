@@ -15,11 +15,13 @@ import com.example.androidlearning.di.HomeActivityComponent;
 import com.example.androidlearning.di.qualifier.ActivityContext;
 import com.example.androidlearning.di.qualifier.AppContext;
 import com.example.androidlearning.model.User;
+import com.example.androidlearning.retrofit.ApiInterface;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
 
 import dagger.android.DaggerActivity;
+import retrofit2.Retrofit;
 
 public class HomeActivity extends AppCompatActivity {
     private static HomeActivityComponent activityComponent;
@@ -34,6 +36,8 @@ public class HomeActivity extends AppCompatActivity {
     User user;
     @Inject
     SharedPreferences sharedPreferences;
+    @Inject
+    ApiInterface apiInterface;
     int x;
     private static final String TAG = "HomeActivity";
 

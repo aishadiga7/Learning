@@ -5,16 +5,19 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.androidlearning.di.module.AppModule;
+import com.example.androidlearning.di.module.GsonModule;
 import com.example.androidlearning.di.qualifier.AppContext;
 import com.example.androidlearning.di.scopes.ForAppComponent;
 import com.example.androidlearning.model.User;
+import com.example.androidlearning.retrofit.ApiInterface;
 import com.google.gson.Gson;
 
 import dagger.BindsInstance;
 import dagger.Component;
+import retrofit2.Retrofit;
 
 @ForAppComponent
-@Component(modules = {AppModule.class})
+@Component(modules = {AppModule.class, GsonModule.class})
 public interface AppComponent {
 
     Gson gson();
@@ -22,6 +25,9 @@ public interface AppComponent {
     SharedPreferences getSharedPref();
     @AppContext
     Context getContext();
+
+    ApiInterface getApiInterface();
+
 
     @Component.Builder
      interface Builder {

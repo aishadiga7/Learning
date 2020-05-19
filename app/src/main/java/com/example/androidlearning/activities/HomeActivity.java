@@ -10,7 +10,6 @@ import android.util.Log;
 import com.example.androidlearning.DaggerApplication;
 import com.example.androidlearning.R;
 import com.example.androidlearning.di.AppComponent;
-import com.example.androidlearning.di.DaggerHomeActivityComponent;
 import com.example.androidlearning.di.HomeActivityComponent;
 import com.example.androidlearning.di.qualifier.ActivityContext;
 import com.example.androidlearning.di.qualifier.AppContext;
@@ -24,21 +23,15 @@ import dagger.android.DaggerActivity;
 import retrofit2.Retrofit;
 
 public class HomeActivity extends AppCompatActivity {
-    private static HomeActivityComponent activityComponent;
     @Inject
     Gson gson;
-    @Inject
-    FragmentManager fragmentManager;
-    @ActivityContext
-    @Inject
-    Context context;
     @Inject
     User user;
     @Inject
     SharedPreferences sharedPreferences;
     @Inject
     ApiInterface apiInterface;
-    int x;
+
     private static final String TAG = "HomeActivity";
 
 
@@ -47,6 +40,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        
+        DaggerApplication.appComponent.getActivityComponent()
+                .inject(this);
+        Log.d(TAG, "gson : "+ gson);
+        Log.d(TAG, "user: "+ user);
+        Log.d(TAG, "sharedPref: "+ sharedPreferences);
+        Log.d(TAG, "apiInterface: "+ apiInterface);
     }
 }

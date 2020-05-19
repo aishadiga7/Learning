@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.androidlearning.activities.HomeActivity;
 import com.example.androidlearning.di.module.AppModule;
 import com.example.androidlearning.di.module.GsonModule;
 import com.example.androidlearning.di.qualifier.AppContext;
@@ -19,15 +20,7 @@ import retrofit2.Retrofit;
 @ForAppComponent
 @Component(modules = {AppModule.class, GsonModule.class})
 public interface AppComponent {
-
-    Gson gson();
-    User getUser();
-    SharedPreferences getSharedPref();
-    @AppContext
-    Context getContext();
-
-    ApiInterface getApiInterface();
-
+    HomeActivityComponent getActivityComponent();
 
     @Component.Builder
      interface Builder {

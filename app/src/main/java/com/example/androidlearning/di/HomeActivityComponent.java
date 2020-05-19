@@ -13,11 +13,11 @@ import com.google.gson.Gson;
 
 import dagger.BindsInstance;
 import dagger.Component;
+import dagger.Subcomponent;
 
 
-
-@ForActivityComponent
+@Subcomponent(modules = {})
 public interface HomeActivityComponent {
-
+    void inject(HomeActivity homeActivity);
 
 }

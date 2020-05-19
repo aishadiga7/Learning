@@ -17,20 +17,7 @@ import dagger.Component;
 
 
 @ForActivityComponent
-@Component(dependencies = {AppComponent.class})
 public interface HomeActivityComponent {
 
-    void inject(HomeActivity homeActivity);
 
-    @Component.Builder
-    interface Builder {
-        HomeActivityComponent build();
-        @BindsInstance
-        HomeActivityComponent.Builder setFragmentManager(FragmentManager fragmentManager);
-
-        @BindsInstance
-        Builder setContext(@ActivityContext Context  context);
-
-        Builder setAppComponent(AppComponent appComponent);
-    }
 }

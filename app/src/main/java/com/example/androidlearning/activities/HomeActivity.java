@@ -46,13 +46,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        activityComponent = DaggerHomeActivityComponent.builder()
-                .setFragmentManager(getSupportFragmentManager())
-                .setAppComponent(DaggerApplication.appComponent)
-                .setContext(this)
-                .build();
-        activityComponent.inject(this);
-        Log.d(TAG, "onCreate: ");
 
         
     }

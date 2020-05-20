@@ -20,7 +20,8 @@ import retrofit2.Retrofit;
 @ForAppComponent
 @Component(modules = {AppModule.class, GsonModule.class})
 public interface AppComponent {
-    HomeActivityComponent getActivityComponent();
+    //HomeActivityComponent getActivityComponent();
+    HomeActivityComponent.Builder getHomeActivtyComponentBuilder();
 
     @Component.Builder
      interface Builder {

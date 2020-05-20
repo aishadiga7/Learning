@@ -43,8 +43,13 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        DaggerApplication.appComponent.getActivityComponent()
+        DaggerApplication.appComponent.getHomeActivtyComponentBuilder()
+                .setContext(this)
+                .setFragmentManager(getSupportFragmentManager())
+                .build()
                 .inject(this);
+
+
         Log.d(TAG, "gson : "+ gson);
         Log.d(TAG, "user: "+ user);
         Log.d(TAG, "sharedPref: "+ sharedPreferences);

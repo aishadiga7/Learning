@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
 
 import com.example.androidlearning.activities.HomeActivity;
+import com.example.androidlearning.di.module.ActivityModule;
 import com.example.androidlearning.di.qualifier.ActivityContext;
 import com.example.androidlearning.di.scopes.ForActivityComponent;
 import com.example.androidlearning.model.User;
@@ -16,7 +17,7 @@ import dagger.Component;
 import dagger.Subcomponent;
 
 
-@Subcomponent(modules = {})
+@Subcomponent(modules = {ActivityModule.class})
 public interface HomeActivityComponent {
     void inject(HomeActivity homeActivity);
 

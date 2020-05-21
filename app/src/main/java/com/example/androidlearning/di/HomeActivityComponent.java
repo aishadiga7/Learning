@@ -1,5 +1,6 @@
 package com.example.androidlearning.di;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -29,6 +30,8 @@ public interface HomeActivityComponent {
         Builder setFragmentManager(FragmentManager fragmentManager);
         @BindsInstance
         Builder setContext(@ActivityContext Context  context);
+        @BindsInstance
+        Builder setActivity(Activity activity);
     }
 
 }

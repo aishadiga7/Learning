@@ -19,6 +19,7 @@ import com.example.androidlearning.model.User;
 import com.example.androidlearning.retrofit.ApiInterface;
 import com.example.androidlearning.util.ActivityUtility;
 import com.example.androidlearning.util.FileManager;
+import com.example.androidlearning.util.Router;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
@@ -43,6 +44,8 @@ public class HomeActivity extends AppCompatActivity {
     ActivityUtility  activityUtility;
     @Inject
     AssetManager assetManager;
+    @Inject
+    Router router;
 
     private static final String TAG = "HomeActivity";
 
@@ -55,6 +58,7 @@ public class HomeActivity extends AppCompatActivity {
         DaggerApplication.appComponent.getHomeActivtyComponentBuilder()
                 .setContext(this)
                 .setFragmentManager(getSupportFragmentManager())
+                .setActivity(this)
                 .build()
                 .inject(this);
 

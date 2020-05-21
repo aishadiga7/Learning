@@ -8,6 +8,7 @@ import com.example.androidlearning.di.qualifier.AppContext;
 import com.example.androidlearning.di.scopes.ForAppComponent;
 import com.example.androidlearning.model.User;
 import com.example.androidlearning.retrofit.ApiInterface;
+import com.example.androidlearning.util.FileManager;
 import com.google.gson.Gson;
 
 import dagger.Module;
@@ -50,6 +51,12 @@ public class AppModule {
     @Provides
     public static ApiInterface provideApiInterface(Retrofit retrofit) {
         return retrofit.create(ApiInterface.class);
+    }
+
+    @ForAppComponent
+    @Provides
+    public static FileManager provideFileManager(Gson gson) {
+        return new FileManager(gson);
     }
 
 }

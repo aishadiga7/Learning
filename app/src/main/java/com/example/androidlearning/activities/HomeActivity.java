@@ -16,6 +16,8 @@ import com.example.androidlearning.di.qualifier.AppContext;
 import com.example.androidlearning.model.Name;
 import com.example.androidlearning.model.User;
 import com.example.androidlearning.retrofit.ApiInterface;
+import com.example.androidlearning.util.ActivityUtility;
+import com.example.androidlearning.util.FileManager;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
@@ -34,6 +36,10 @@ public class HomeActivity extends AppCompatActivity {
     ApiInterface apiInterface;
     @Inject
     Name name;
+    @Inject
+    FileManager fileManager;
+    @Inject
+    ActivityUtility  activityUtility;
 
     private static final String TAG = "HomeActivity";
 
@@ -55,5 +61,6 @@ public class HomeActivity extends AppCompatActivity {
         Log.d(TAG, "sharedPref: "+ sharedPreferences);
         Log.d(TAG, "apiInterface: "+ apiInterface);
         Log.d(TAG, "name: "+ name.getName());
+        Log.d(TAG, "fileManager: "+ fileManager);
     }
 }

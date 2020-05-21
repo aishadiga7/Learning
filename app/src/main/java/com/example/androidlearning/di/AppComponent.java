@@ -3,6 +3,7 @@ package com.example.androidlearning.di;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 
 import com.example.androidlearning.activities.HomeActivity;
 import com.example.androidlearning.di.module.AppModule;
@@ -30,5 +31,7 @@ public interface AppComponent {
         Builder setApplication(Application  application);
         @BindsInstance
         Builder setContext(@AppContext Context  context);
+        @BindsInstance
+        Builder setAssetManager(AssetManager  assetManager);
     }
 }

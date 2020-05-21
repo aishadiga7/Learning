@@ -1,6 +1,7 @@
 package com.example.androidlearning;
 
 import android.app.Application;
+import android.content.res.AssetManager;
 import android.util.Log;
 
 import com.example.androidlearning.di.AppComponent;
@@ -18,6 +19,7 @@ public class DaggerApplication extends Application {
         appComponent = DaggerAppComponent.builder()
                 .setApplication(this)
                 .setContext(this)
+                .setAssetManager(getAssets())
                 .build();
 
     }

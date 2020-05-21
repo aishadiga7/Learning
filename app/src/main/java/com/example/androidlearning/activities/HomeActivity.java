@@ -2,6 +2,7 @@ package com.example.androidlearning.activities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,6 +41,8 @@ public class HomeActivity extends AppCompatActivity {
     FileManager fileManager;
     @Inject
     ActivityUtility  activityUtility;
+    @Inject
+    AssetManager assetManager;
 
     private static final String TAG = "HomeActivity";
 

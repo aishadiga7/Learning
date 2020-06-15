@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Car car = new Car();
+//        Car car = new Car();
 
     }
 }
